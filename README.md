@@ -1,5 +1,5 @@
 # Right Edge Alphavantage plugin
 This is my Alphavantage plugin for Right Edge.
 To use it you would want to make yourself and account on https://www.alphavantage.co/ .
-The install RightEdge from http://www.rightedgesystems.com/. 
+Then install RightEdge from http://www.rightedgesystems.com/. 
 
