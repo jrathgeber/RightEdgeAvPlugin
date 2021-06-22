@@ -4,3 +4,8 @@ To use it you would want to first make yourself an account on https://www.alphav
 Then second install RightEdge from http://www.rightedgesystems.com/ and add the dll to the pluggins folder. 
 With this you could then download stock price data to RightEdge and back test trading systems on it. 
 
+Adding a second file to this repo. SymbolConfig.cs 
+This is a port to c# of the python code I use in Mechanizd to add symbols to the maxalpha symbolconfig file. 
+** Don't use this yet **
+** Still a work in progress **
+** Needs testing **
