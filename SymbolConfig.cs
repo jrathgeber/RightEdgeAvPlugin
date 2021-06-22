@@ -70,23 +70,17 @@ namespace SymbolConfig
         private void getSymbolConfig( List<String> symbols, string todaydate, string maxdata)
         {
 
+            
+            // The real file - for me
+            var f = File.OpenText("C:\\Users\\Jason\\AppData\\Roaming\\Yye Software\\RightEdge\\2010.1.0.0\\SymbolConfig.xml");
 
-            // def getSymbolConfig(tickers, todaydate, maxdata):
-            // tickers = ['SPI', 'ICON', 'CNET', 'RIOT', 'HMNY']
-            // todaydate = "20180127"
 
-            // f = open(r"C:\Users\Jason\AppData\Roaming\Yye Software\RightEdge\2010.1.0.0\SymbolConfig.xml", "r")
-
-            //var f = File.OpenText("C:\\Users\\Jason\\AppData\\Roaming\\Yye Software\\RightEdge\\2010.1.0.0\\Samples\\RightEdgePluginsNew\\SymbolConfig1\\input.txt");
-            //var copy = new StreamWriter("C:\\Users\\Jason\\AppData\\Roaming\\Yye Software\\RightEdge\\2010.1.0.0\\Samples\\RightEdgePluginsNew\\SymbolConfig1\\output.txt");
-
-            var f = File.OpenText("C:\\Users\\Jason\\AppData\\Roaming\\Yye Software\\RightEdge\\2010.1.0.0\\Samples\\RightEdgePluginsNew\\SymbolConfig1\\SymbolConfigStart.xml");
+            // Testing / copies
+            // var f = File.OpenText("C:\\Users\\Jason\\AppData\\Roaming\\Yye Software\\RightEdge\\2010.1.0.0\\Samples\\RightEdgePluginsNew\\SymbolConfig1\\SymbolConfigStart.xml");
             var copy = new StreamWriter("C:\\Users\\Jason\\AppData\\Roaming\\Yye Software\\RightEdge\\2010.1.0.0\\Samples\\RightEdgePluginsNew\\SymbolConfig1\\SymbolConfig.xml");
 
 
-            // f = open(r"SymbolConfigStart.xml", "r")
-            // copy = open("SymbolConfig.xml", "w")
-
+            // my crazy loop throught the right esge symbole config
             int x = 0;
 
             string line;
@@ -107,48 +101,43 @@ namespace SymbolConfig
                 copy.WriteLine(line);
 
             }
-            
-            
-                
-             //print(line)
-             //f.close()
-             //copy.close()
 
-
-            //time.sleep(3)
+            
+            //print(line)
+            f.Close();
+            copy.Close();
+            
+            // Good idea to wait till all write operations are finnished
             System.Threading.Thread.Sleep(TimeSpan.FromSeconds(3));
 
+            // Copy the file into the right place
+            File.Copy("C:\\Users\\Jason\\AppData\\Roaming\\Yye Software\\RightEdge\\2010.1.0.0\\Samples\\RightEdgePluginsNew\\SymbolConfig1\\SymbolConfig.xml", "C:\\Users\\Jason\\AppData\\Roaming\\Yye Software\\RightEdge\\2010.1.0.0\\SymbolConfig.xml", true);
 
-            //copyfile('SymbolConfig.xml', 'C:\\Users\\Jason\\AppData\\Roaming\\Yye Software\\RightEdge\\2010.1.0.0\\SymbolConfig.xml')
-            //File.Move("SymbolConfig.xml", "C:\\Users\\Jason\\AppData\\Roaming\\Yye Software\\RightEdge\\2010.1.0.0\\SymbolConfig.xml");
-
-            //Backup
-            //copyfile('C:\\Users\\Jason\\AppData\\Roaming\\Yye Software\\RightEdge\\2010.1.0.0\\SymbolConfig.xml', 'F:\\RightEdge\\MaxAlpha\\SymbolConfig' + todaydate + '.xml')
+            //Backup - this is a good idea
+            //File.Copy('C:\\Users\\Jason\\AppData\\Roaming\\Yye Software\\RightEdge\\2010.1.0.0\\SymbolConfig.xml', 'F:\\RightEdge\\MaxAlpha\\SymbolConfig' + todaydate + '.xml')
             //File.Move("C:\\Users\\Jason\\AppData\\Roaming\\Yye Software\\RightEdge\\2010.1.0.0\\SymbolConfig.xml", "F:\\RightEdge\\MaxAlpha\\SymbolConfig" + todaydate + ".xml");
 
 
         }
-        
-                
+
+
+        // Run this method
         static void Main(string[] args)
         {
-            System.Threading.Thread.Sleep(TimeSpan.FromSeconds(3));
-            Console.WriteLine("Hello, World Right Edge");
 
-            //os.chdir('C:\\dep\Mechanizd\\maxalpha\\')
+            Console.WriteLine("Hello, World, RightEdge, Is Here.");
 
             //daterun = time.strftime("%Y%m%d")
-            var daterun = "20210621";
+            var daterun = "20210623";
 
             Console.WriteLine("Date " + daterun);
 
-            var maxdata = "hello";
+            var maxdata = "dummy value";
 
-            var tickerList = new List<String>() { "GME", "AMC", "TSLA", "VTNR" };
+            var tickerList = new List<String>() { "IBM", "AMC", "TSLA", "VTNR" };
             
             Console.WriteLine("Ticker List : ");
             tickerList.ForEach(Console.WriteLine);
-            //Console.WriteLine(tickerList);
 
             //Test It
             SymbolConfig p = new SymbolConfig();
