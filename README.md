@@ -6,6 +6,4 @@ With this you could then download stock price data to RightEdge and back test tr
 
 Adding a second file to this repo. SymbolConfig.cs 
 This is a port to c# of the python code I use in Mechanizd to add symbols to the maxalpha symbolconfig file. 
-** Don't use this yet **
-** Still a work in progress **
-** Needs testing **
+Tested it works eactly one time. Ready to ship!
